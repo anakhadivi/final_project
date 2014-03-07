@@ -1,8 +1,38 @@
 body{
 	color: #FFF;
 	background-color: #A31919;
-	font-family: "Comic Sans MS", cursive, sans-serif
+	font-family: "Courier New", Courier, monospace
 }
 button a{
 	text-decoration: none;
+}
+#welcome{
+	text-align: right;
+}
+#sign_up{
+	text-align: right;
+}
+#sign_up a{
+	text-decoration: none;
+	color:#FFF;
+}
+#sign_in {
+	text-align: right;
+}
+.notice{
+	max-width: 400px;
+}
+#userhome_layout{
+	background-color: #F6E8E8;
+	color: black;
+	text-align: center;
+}
+#homepage_posts{
+	text-align: center;
+	background-color: #F6E8E8;
+	color:black;
+}
+#first_name_posts{
+	font-weight: bold;
+	font-color:black;
 }

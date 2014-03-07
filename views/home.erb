@@ -1,22 +1,36 @@
-<button>
+
+<div id="sign_in">
+	<h2>
+		Login
+	</h2>
+
+	<form method="POST" action="/sessions/new"> 
+	<label for="email">Email</label>
+	<input type="text" name="[user]email">  
+	<label for="password">Password</label> 
+	<input type="password" name="[user]password"> 
+	<input type="submit">
+	</form>
+</div>
+	<br>
+<div id="sign_up">
+	Don't have an account? Not a problem, 
 	<a href="/signup">
-		Sign Up
+		<b>sign up now!</b>
 	</a>
-</button>
+</div>
 
-<h2>
-	Login
-</h2>
+<div id="homepage_posts">
+		<h3>
+			Trending Right Now:
+		</h3>
 
-<form method="POST" action="/sessions/new"> 
-<label for="email">Email</label>
-<input type="text" name="[user]email">  
-<label for="password">Password</label> 
-<input type="password" name="[user]password"> 
-<input type="submit">
-</form>
-
-<h3>
-	Latest Posts:
-</h3>
-
+		<% @post.each do |post| %>
+		   <b id="first_name_posts"><%=post.user.first_name + ":"%></b>
+		    <br>
+			<%=post.title %>
+			<br>
+			<%=post.text %>
+			<br>
+		<% end %>
+	</div>

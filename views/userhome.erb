@@ -1,12 +1,37 @@
-Hello, <%= @user.first_name if @user %>
+<div id="welcome">
+	Hello, <%= @user.first_name if @user %>
+	<br>
+	<button>
+<a href="/logout">
+	Logout
+</a>
+</button>
+</div>
+<div id="userhome_layout">
+	<div id="create_post">
+		<h2>
+			Create a new post:
+		</h2>
 
-<h2>
-	Create a new post:
-</h2>
+		<form action="/userhome" method="POST">
+		<label for="title">Title</label>
+		<input type="text" name="title">
+		<label for="text">Text</label>
+		<input type="text" name="text">
+		<input type="submit">
+		</form>
+	</div>
+	<div id="latest_posts">
+		<h3>
+			Recent Posts
+		</h3>
+		
+		<b><% @user.posts.each do |post| %></b>
+			<%=post.title %>
+			<br>
+			<%=post.text %>
+			<br>
+		<% end %>
+	</div>
+</div>
 
-<form action="/userhome" method="POST">
-  <label for="title">Title</label>
-  <input type="text" name="title">
-  <label for="text">Text</label>
-  <input type="submit">
-</form>
